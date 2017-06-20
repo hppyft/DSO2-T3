@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DSO2T3</string>
+    <string name="favorito">Favorito</string>
+    <string name="localizacao">Localização</string>
 </resources>

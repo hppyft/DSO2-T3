@@ -1,7 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</LinearLayout>
+    <CheckBox
+        android:id="@+id/favorito_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/favorito" />
+
+    <ImageView
+        android:id="@+id/foto_view"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/favorito_checkbox"
+        android:layout_marginTop="@dimen/little_margin_top"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ponte_hercilio_luz_maior" />
+
+    <TextView
+        android:id="@+id/nome_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/foto_view"
+        android:layout_marginLeft="@dimen/margin_left_item"
+        android:layout_marginStart="@dimen/margin_left_item"
+        android:layout_toEndOf="@id/foto_view"
+        android:layout_toRightOf="@id/foto_view"
+        android:maxWidth="@dimen/half_screen_max_width"
+        tools:text="NOME VAI AQUI, E PODE SER MEIO GRANDAO E TALS" />
+
+    <TextView
+        android:id="@+id/valor_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/nome_view"
+        android:layout_alignStart="@id/nome_view"
+        android:layout_below="@id/nome_view"
+        android:layout_marginTop="@dimen/margin_top_item"
+        tools:text="R$ 10,00" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/localizacao_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/valor_view"
+        android:layout_alignStart="@id/valor_view"
+        android:layout_below="@id/valor_view"
+        android:layout_marginTop="@dimen/margin_top_item"
+        android:text="@string/localizacao" />
+
+    <TextView
+        android:id="@+id/horario_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/localizacao_view"
+        android:layout_alignStart="@id/localizacao_view"
+        android:layout_below="@id/localizacao_view"
+        android:layout_marginTop="@dimen/margin_top_item"
+        android:maxWidth="@dimen/half_screen_max_width"
+        tools:text="Segunda a Sexta das 10:00 as 12:00 e das 13:00 as 18:00. Sábado das 14:00 as 19:00" />
+
+    <TextView
+        android:id="@+id/descricao_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foto_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_left_item"
+        android:layout_marginStart="@dimen/margin_left_item"
+        android:layout_marginTop="@dimen/descricao_margin_top"
+        android:maxWidth="@dimen/descricao_max_width"
+        tools:text="AABOUGAOIHOWIH RAIHARIOHRWI WPRRUA APRAJ IAHEOAEC ASIORHIAHRAS ASPIRHIPAHSRIPAR ASRIHNIPASRHRS ASIHIASRH ANRANIRSAS PASRIPASRSR AIRASIAHSRI ASASRISRHIASR AA  AF NLAFNÇ UB BUIUISYI TBISF TBI SITFTI SS IFTYITYIS IY STYIOS  TYI  SI IT ISF TITNISSITNIOS  SIS " />
+</RelativeLayout>
