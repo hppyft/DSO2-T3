@@ -3,4 +3,7 @@
     <string name="favorito">Favorito</string>
     <string name="localizacao">Localização</string>
     <string name="frag_list">frag_list</string>
+    <string name="titulo_lista">Pontos turísticos de Florianópolis</string>
+    <string name="button_label_listar_todos">Listar todos</string>
+    <string name="button_label_listar_favoritos">Listar apenas favoritos</string>
 </resources>

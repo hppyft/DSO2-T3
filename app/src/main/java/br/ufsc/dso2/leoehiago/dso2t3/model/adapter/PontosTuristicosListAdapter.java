@@ -1,5 +1,6 @@
 package br.ufsc.dso2.leoehiago.dso2t3.model.adapter;
 
+import android.app.Application;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,14 +15,17 @@ import java.util.List;
 import br.ufsc.dso2.leoehiago.dso2t3.R;
 import br.ufsc.dso2.leoehiago.dso2t3.model.entity.PontoTuristico;
 import br.ufsc.dso2.leoehiago.dso2t3.model.listener.OnPontoTuristicoClickedListener;
+import br.ufsc.dso2.leoehiago.dso2t3.model.util.ResUtil;
 
 public class PontosTuristicosListAdapter extends RecyclerView.Adapter<PontosTuristicosListAdapter.ViewHolder> {
 
     private final OnPontoTuristicoClickedListener mListener;
     private List<PontoTuristico> mList;
     private Context mContext;
+    private Application mApplication;
 
-    public PontosTuristicosListAdapter(Context context, OnPontoTuristicoClickedListener listener) {
+    public PontosTuristicosListAdapter(Context context, OnPontoTuristicoClickedListener listener, Application application) {
+        mApplication = application;
         mContext = context;
         mListener = listener;
         mList = new ArrayList();
@@ -37,7 +41,7 @@ public class PontosTuristicosListAdapter extends RecyclerView.Adapter<PontosTuri
     @Override
     public void onBindViewHolder(PontosTuristicosListAdapter.ViewHolder holder, int position) {
         final PontoTuristico pontoTuristico = mList.get(position);
-        holder.mIconeResmoView.setImageResource(pontoTuristico.imgResumoResId);
+        holder.mIconeResmoView.setImageResource(ResUtil.getDrawable(mApplication, pontoTuristico.imgResumo));
         holder.mNomeResumoView.setText(pontoTuristico.nome);
         holder.mLayout.setOnClickListener(new View.OnClickListener() {
             @Override

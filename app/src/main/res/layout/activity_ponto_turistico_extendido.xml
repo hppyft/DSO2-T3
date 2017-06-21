@@ -10,6 +10,7 @@
         android:orientation="vertical">
 
         <fragment
+            android:id="@+id/frag_extendido"
             android:name="br.ufsc.dso2.leoehiago.dso2t3.view.fragment.PontoTuristicoExtendidoFragmentImpl"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

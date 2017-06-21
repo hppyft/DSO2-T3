@@ -7,4 +7,5 @@
     <dimen name="descricao_margin_top">30dp</dimen>
     <dimen name="descricao_max_width">300dp</dimen>
     <dimen name="little_margin_top">5dp</dimen>
+    <dimen name="margin_top_medium">20dp</dimen>
 </resources>

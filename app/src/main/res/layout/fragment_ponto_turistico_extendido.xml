@@ -22,7 +22,7 @@
         android:layout_below="@id/favorito_checkbox"
         android:layout_marginTop="@dimen/little_margin_top"
         android:scaleType="centerCrop"
-        tools:src="@drawable/ponte_hercilio_luz_maior" />
+        tools:src="@drawable/ponte" />
 
     <TextView
         android:id="@+id/nome_view"

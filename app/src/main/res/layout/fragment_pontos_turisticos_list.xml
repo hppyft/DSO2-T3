@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fragment_pontos_turisticos_list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/fragment_pontos_turisticos_list"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background_light"
+              android:orientation="vertical">
 
     <TextView
-        android:text="TESTE TESTE"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top_medium"
+        android:text="@string/titulo_lista"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_medium"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/botao_list_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_label_listar_todos"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/botao_list_favoritos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_label_listar_favoritos"/>
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        app:layoutManager="LinearLayoutManager"
         android:id="@+id/pontos_turisticos_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_medium"
+        app:layoutManager="LinearLayoutManager"/>
 
 </LinearLayout>

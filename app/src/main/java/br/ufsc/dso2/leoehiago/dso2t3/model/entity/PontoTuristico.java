@@ -8,7 +8,7 @@ public class PontoTuristico {
     public String horarioFuncionamento;
     public double valorEntrada;
     public String geoLocalizacao;
-    public int imgResumoResId;
-    public int imgResId;
+    public String imgResumo;
+    public String img;
     public boolean ehFavorito;
 }

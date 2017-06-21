@@ -7,15 +7,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatButton;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.ufsc.dso2.leoehiago.dso2t3.R;
 import br.ufsc.dso2.leoehiago.dso2t3.model.entity.PontoTuristico;
+import br.ufsc.dso2.leoehiago.dso2t3.model.util.ResUtil;
 import br.ufsc.dso2.leoehiago.dso2t3.presenter.PontoTuristicoExtendidoPresenter;
 import br.ufsc.dso2.leoehiago.dso2t3.presenter.PontoTuristicoExtendidoPresenterImpl;
 
@@ -31,7 +32,8 @@ public class PontoTuristicoExtendidoFragmentImpl extends Fragment {
     private TextView mDescricao;
 
     public PontoTuristicoExtendidoFragmentImpl() {
-        mPresenter = new PontoTuristicoExtendidoPresenterImpl(this);
+        mPresenter = PontoTuristicoExtendidoPresenterImpl.getInstance();
+        mPresenter.setFragment(this);
     }
 
     @Nullable
@@ -50,15 +52,19 @@ public class PontoTuristicoExtendidoFragmentImpl extends Fragment {
         final PontoTuristico pontoTuristico = mPresenter.getPontoTuristico();
 
         mFavorito.setChecked(pontoTuristico.ehFavorito);
-        mFoto.setImageDrawable(getResources().getDrawable(pontoTuristico.imgResId));
+        mFavorito.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                mPresenter.onFavoritoChanged(b);
+            }
+        });
+        mFoto.setImageDrawable(getResources().getDrawable(ResUtil.getDrawable(getActivity().getApplication(), pontoTuristico.img)));
         mNome.setText(pontoTuristico.nome);
-        mValor.setText("R$ " + pontoTuristico.valorEntrada);
-        //TODO ARRUMAR AQUI /\
+        mValor.setText(String.format("R$ %s", pontoTuristico.valorEntrada));
         mLocalizacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("geo:" + pontoTuristico.geoLocalizacao + "?q=" + pontoTuristico.nome);
-                //TODO ARRUMAR AQUI /\
+                Uri uri = Uri.parse((String.format("geo:%s?q=%s", pontoTuristico.geoLocalizacao, pontoTuristico.nome)));
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
