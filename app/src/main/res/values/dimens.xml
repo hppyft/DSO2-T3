@@ -4,8 +4,10 @@
     <dimen name="margin_top_item">10dp</dimen>
     <dimen name="margin_bottom_item">10dp</dimen>
     <dimen name="half_screen_max_width">150dp</dimen>
-    <dimen name="descricao_margin_top">30dp</dimen>
+    <dimen name="descricao_margin_top">50dp</dimen>
+    <dimen name="descricao_margin_bottom">50dp</dimen>
     <dimen name="descricao_max_width">300dp</dimen>
     <dimen name="little_margin_top">5dp</dimen>
     <dimen name="margin_top_medium">20dp</dimen>
+    <dimen name="little_margin_left">10dp</dimen>
 </resources>
