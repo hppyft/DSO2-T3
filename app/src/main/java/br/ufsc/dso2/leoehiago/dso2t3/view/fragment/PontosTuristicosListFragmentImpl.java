@@ -31,7 +31,7 @@ public class PontosTuristicosListFragmentImpl extends Fragment implements OnPont
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pontos_turisticos_list, container, false);
 
-        mRecyclerView = new RecyclerView(getActivity());
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.pontos_turisticos_list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
         mAdapter = new PontosTuristicosListAdapter(getActivity(), this);

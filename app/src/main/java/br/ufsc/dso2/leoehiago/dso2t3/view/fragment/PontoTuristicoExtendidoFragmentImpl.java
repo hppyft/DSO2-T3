@@ -39,13 +39,13 @@ public class PontoTuristicoExtendidoFragmentImpl extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ponto_turistico_extendido, container, false);
 
-        mFavorito = (CheckBox) getActivity().findViewById(R.id.favorito_checkbox);
-        mFoto = (ImageView) getActivity().findViewById(R.id.foto_view);
-        mNome = (TextView) getActivity().findViewById(R.id.nome_view);
-        mValor = (TextView) getActivity().findViewById(R.id.valor_view);
-        mLocalizacao = (AppCompatButton) getActivity().findViewById(R.id.localizacao_view);
-        mHorario = (TextView) getActivity().findViewById(R.id.horario_view);
-        mDescricao = (TextView) getActivity().findViewById(R.id.descricao_view);
+        mFavorito = (CheckBox) view.findViewById(R.id.favorito_checkbox);
+        mFoto = (ImageView) view.findViewById(R.id.foto_view);
+        mNome = (TextView) view.findViewById(R.id.nome_view);
+        mValor = (TextView) view.findViewById(R.id.valor_view);
+        mLocalizacao = (AppCompatButton) view.findViewById(R.id.localizacao_view);
+        mHorario = (TextView) view.findViewById(R.id.horario_view);
+        mDescricao = (TextView) view.findViewById(R.id.descricao_view);
 
         final PontoTuristico pontoTuristico = mPresenter.getPontoTuristico();
 
