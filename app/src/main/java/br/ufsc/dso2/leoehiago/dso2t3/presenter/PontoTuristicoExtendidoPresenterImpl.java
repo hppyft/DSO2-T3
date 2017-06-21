@@ -5,6 +5,8 @@ import android.os.Parcel;
 import br.ufsc.dso2.leoehiago.dso2t3.model.entity.PontoTuristico;
 import br.ufsc.dso2.leoehiago.dso2t3.view.fragment.PontoTuristicoExtendidoFragmentImpl;
 
+import static br.ufsc.dso2.leoehiago.dso2t3.presenter.PontosTuristicoesListPresenterImpl.getDumbPTList;
+
 public class PontoTuristicoExtendidoPresenterImpl implements PontoTuristicoExtendidoPresenter {
 
     private Integer ptID;
@@ -21,6 +23,6 @@ public class PontoTuristicoExtendidoPresenterImpl implements PontoTuristicoExten
     @Override
     public PontoTuristico getPontoTuristico() {
         //TODO Pegar ponto turistico do BD baseado no ptID e retorna-lo
-        return new PontoTuristico(Parcel.obtain());
+        return getDumbPTList().get(0);
     }
 }
