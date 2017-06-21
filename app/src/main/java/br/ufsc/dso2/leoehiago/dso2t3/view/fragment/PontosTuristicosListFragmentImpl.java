@@ -1,8 +1,9 @@
 package br.ufsc.dso2.leoehiago.dso2t3.view.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,10 +31,12 @@ public class PontosTuristicosListFragmentImpl extends Fragment implements OnPont
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pontos_turisticos_list, container, false);
 
-        mRecyclerView = new RecyclerView(getActivity());
-        mAdapter = new PontosTuristicosListAdapter(this);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.pontos_turisticos_list);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mAdapter = new PontosTuristicosListAdapter(getActivity(), this);
+        mAdapter.setList(mPresenter.getList());
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.mList = mPresenter.getList();
 
         return view;
     }
